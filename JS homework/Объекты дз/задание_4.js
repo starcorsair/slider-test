@@ -27,14 +27,36 @@
 //использование синтаксиса es6 (кроме функции-конструкторов) и так далее.
 
 function ElcetroDevice(location) {
-  this.location = office;
+  this.location = location;
   this.condition = recent;
 }
 function Notebooks(location, condition, price, drivers, oc) {
-  this.location = office;
-  this.condition = recent;
-  this.price = expensive;
+  this.location = location;
+  this.condition = condition;
+  this.price = price;
   this.drivers = drivers;
   this.oc = "Linux";
 }
-function Printers(location, condition, drivers, price) {}
+function Printers(location, condition, drivers, price, multicolor) {
+  this.location = location;
+  this.condition = condition;
+  this.price = price;
+  this.drivers = drivers;
+  this.multicolor = multicolor;
+}
+
+function Computers(location, condition, price, drivers, oc) {
+  this.location = location;
+  this.condition = condition;
+  this.price = price;
+  this.drivers = drivers;
+  this.oc = "Windows";
+}
+
+function Scanners(location, condition, drivers, price, types) {
+  this.location = location;
+  this.condition = condition;
+  this.price = price;
+  this.drivers = drivers;
+  this.types = types;
+}
