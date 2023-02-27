@@ -97,6 +97,30 @@ acer.drive = "no";
 hp.name = "LazerJet";
 hp.year = 2023;
 
-samsung.isPrinterConnected = function () {
-  console.log("this notebook is not connected with ${hp.name}");
+samsung.isPriceSame = function () {
+  console.log("this notebook have not same price with computer");
 };
+acer.HaveSameLocation = function () {
+  console.log("this computer have some location with printer");
+};
+isPriceSame();
+HaveSameLocation();
+
+samsung.IsOn();
+samsung.IsOff();
+samsung.HaveSamePrice();
+samsung.HaveNotSamePrice();
+
+acer.IsOn();
+acer.IsOff();
+acer.HaveSameOc();
+acer.HaveNotSameOc();
+
+hp.IsOn();
+hp.IsOff();
+hp.ThereIsConntection();
+hp.ThereIsNoConntection();
+
+console.log(samsung);
+console.log(acer);
+console.log(hp);
