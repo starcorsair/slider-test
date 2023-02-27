@@ -26,4 +26,15 @@
 //четкая связь между классом и его экземплярами (класс описывает множество, а экземпляр — конкретную реализацию);
 //использование синтаксиса es6 (кроме функции-конструкторов) и так далее.
 
-function ElcetroDevice() {}
+function ElcetroDevice(location) {
+  this.location = office;
+  this.condition = recent;
+}
+function Notebooks(location, condition, price, drivers, oc) {
+  this.location = office;
+  this.condition = recent;
+  this.price = expensive;
+  this.drivers = drivers;
+  this.oc = "Linux";
+}
+function Printers(location, condition, drivers, price) {}
