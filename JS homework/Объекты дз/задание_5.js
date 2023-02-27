@@ -1,9 +1,10 @@
 //Задание 5.
 
 //Переписать консольное приложение из предыдущего юнита на классы.
-class Device {
-  constructor(year) {
-    (this.company = "apple"), (this.year = year);
+class ElcetroDevices {
+  constructor(location) {
+    this.location = location;
+    this.condition = recent;
   }
 
   getName = function () {
