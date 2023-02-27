@@ -26,7 +26,7 @@
 //четкая связь между классом и его экземплярами (класс описывает множество, а экземпляр — конкретную реализацию);
 //использование синтаксиса es6 (кроме функции-конструкторов) и так далее.
 
-function ElcetroDevice(location) {
+function ElcetroDevices(location) {
   this.location = location;
   this.condition = recent;
 }
@@ -37,6 +37,13 @@ function Notebooks(location, condition, price, drivers, oc) {
   this.drivers = drivers;
   this.oc = "Linux";
 }
+function Computers(location, condition, price, drivers, oc) {
+  this.location = location;
+  this.condition = condition;
+  this.price = price;
+  this.drivers = drivers;
+  this.oc = "Windows";
+}
 function Printers(location, condition, drivers, price, multicolor) {
   this.location = location;
   this.condition = condition;
@@ -45,18 +52,21 @@ function Printers(location, condition, drivers, price, multicolor) {
   this.multicolor = multicolor;
 }
 
-function Computers(location, condition, price, drivers, oc) {
-  this.location = location;
-  this.condition = condition;
-  this.price = price;
-  this.drivers = drivers;
-  this.oc = "Windows";
-}
+Notebooks.prototype = new ElcetroDevices();
+Computers.prototype = new ElcetroDevices();
+Printers.prototype = new ElcetroDevices();
 
-function Scanners(location, condition, drivers, price, types) {
-  this.location = location;
-  this.condition = condition;
-  this.price = price;
-  this.drivers = drivers;
-  this.types = types;
-}
+ElcetroDevices.prototype.IsOn = function () {
+  console.log(`this device is turned on`);
+};
+
+ElcetroDevices.prototype.IsOff = function () {
+  console.log(`this device is turned off`);
+};
+
+Printers.prototype.ThereIsConntection = function () {
+  console.log("this printer is connected with device");
+};
+Printers.prototype.ThereIsNoConntection = function () {
+  console.log("this printer is not connected with device");
+};
