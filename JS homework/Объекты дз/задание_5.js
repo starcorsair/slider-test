@@ -6,7 +6,7 @@ class ElcetroDevices {
     this.location = location;
     this.condition = recent;
   }
-
+  //переписать
   getName = function () {
     console.log(`The name of this ${this.type} is ${this.name}`);
   };
@@ -51,41 +51,46 @@ class Accessories extends Device {
   }
 }
 
-// Создание устройств
-const macBook = new Computer("laptop", "MacBook", "Pro", 2015);
-const iphone = new Phone("phone", "IPhone", "XR", 2018);
-const airPods = new Accessories("Accessor", "2nd generation", "Airpods", 2023);
+// тут правильно
+const samsung = new Notebooks("office", "recent", "expensive", "Linux");
+const acer = new Computers("office", "recent", "cheap", "Windows");
+const hp = new Printers("office", "recent", "cheap", "colored");
 
-// Добавление собственных свойств
-macBook.memory = 128;
-macBook.display = 13;
+samsung.cpu = "Corei5";
+samsung.card = "AMD";
 
-iphone.color = "coral";
-iphone.memory = 128;
-iphone.case = "seagreen";
-iphone.color = "coral";
+acer.disk = "SSD";
+acer.drive = "no";
 
-// Добавление собственных методов
-iphone.callThePolice = function () {
-  console.log(
-    `Do you want to call the police through your ${this.name} or ${airPods.name}`
-  );
+hp.name = "LazerJet";
+hp.year = 2023;
+
+samsung.isPriceSame = function () {
+  console.log("this notebook have not same price with computer");
 };
-
-airPods.createThePair = function () {
-  console.log(
-    `Your ${this.name} are created the pair with your ${iphone.name}`
-  );
+acer.HaveSameLocation = function () {
+  console.log("this computer have some location with printer");
 };
+isPriceSame();
+HaveSameLocation();
 
-// Проверка методов
-macBook.putTheDeviceOnCharging();
-airPods.putTheDeviceOnCharging();
-airPods.getName();
-airPods.turnOff();
-iphone.getName();
-iphone.putTheDeviceOnCharging();
+//тут правильно
 
-console.log(macBook);
-console.log(iphone);
-console.log(airPods);
+samsung.IsOn();
+samsung.IsOff();
+samsung.HaveSamePrice();
+samsung.HaveNotSamePrice();
+
+acer.IsOn();
+acer.IsOff();
+acer.HaveSameOc();
+acer.HaveNotSameOc();
+
+hp.IsOn();
+hp.IsOff();
+hp.ThereIsConntection();
+hp.ThereIsNoConntection();
+
+console.log(samsung);
+console.log(acer);
+console.log(hp);
