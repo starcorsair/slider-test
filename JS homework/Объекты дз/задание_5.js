@@ -6,52 +6,63 @@ class ElcetroDevices {
     this.location = location;
     this.condition = recent;
   }
-  //переписать
-  getName = function () {
-    console.log(`The name of this ${this.type} is ${this.name}`);
-  };
-
-  putTheDeviceOnCharging = function () {
-    console.log(`${this.name} is on charging now`);
-  };
-
-  putTheDeviceOnCharging = function () {
-    console.log(`${this.name} is on charging, please wait few minutes`);
-  };
-
-  turnOn = function () {
-    console.log(`${this.name} is turned on`);
-  };
-
-  turnOff = function () {
-    console.log(`${this.name} is turned off`);
-  };
 }
 
-//Делегирующая связь
+IsOn = function () {
+  console.log(`this device is turned on`);
+};
 
-class Computer extends Device {
-  constructor(type, name, model, year) {
-    super(year);
-    (this.type = type), (this.name = name), (this.model = model);
+IsOff = function () {
+  console.log(`this device is turned off`);
+};
+
+class Notebooks extends ElcetroDevices {
+  constructor(location, condition, price, oc) {
+    super(location);
+    (this.location = location)((this.condition = condition)),
+      (this.price = price),
+      (this.oc = oc);
   }
 }
-
-class Phone extends Device {
-  constructor(type, model, name, year) {
-    super(year);
-    (this.type = type), (this.model = model), (this.name = name);
+class Computers extends ElcetroDevices {
+  constructor(location, condition, price, oc) {
+    super(location);
+    (this.location = location)((this.condition = condition))(
+      (this.price = price)
+    )((this.oc = oc));
   }
 }
-
-class Accessories extends Device {
-  constructor(type, model, name, year) {
-    super(year);
-    (this.type = type), (this.model = model), (this.name = name);
+class Printers extends ElcetroDevices {
+  constructor(location, condition, price, multicolor) {
+    super(location);
+    (this.location = location)((this.condition = condition))(
+      (this.price = price)
+    )((this.multicolor = multicolor));
   }
 }
+ThereIsConntection = function () {
+  console.log("this printer is connected with device");
+};
+ThereIsNoConntection = function () {
+  console.log("this printer is not connected with device");
+};
 
-// тут правильно
+HaveSameOc = function () {
+  console.log("these computers have some oc");
+};
+
+HaveNotSameOc = function () {
+  console.log("these computers have not some oc");
+};
+
+HaveSamePrice = function () {
+  console.log("these notebooks have some price");
+};
+
+HaveNotSamePrice = function () {
+  console.log("notebooks have not some price");
+};
+
 const samsung = new Notebooks("office", "recent", "expensive", "Linux");
 const acer = new Computers("office", "recent", "cheap", "Windows");
 const hp = new Printers("office", "recent", "cheap", "colored");
@@ -73,8 +84,6 @@ acer.HaveSameLocation = function () {
 };
 isPriceSame();
 HaveSameLocation();
-
-//тут правильно
 
 samsung.IsOn();
 samsung.IsOff();
